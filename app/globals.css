@@ -1,0 +1,177 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to BankEase color palette with teal primary and amber secondary */
+  --background: oklch(1 0 0); /* #ffffff - Clean white background */
+  --foreground: oklch(0.2 0.02 220); /* #1f2937 - Dark gray for main text */
+  --card: oklch(0.99 0.005 220); /* #fefefe - Very light card background */
+  --card-foreground: oklch(0.25 0.02 220); /* #374151 - Dark gray for card text */
+  --popover: oklch(1 0 0); /* #ffffff - White for popovers */
+  --popover-foreground: oklch(0.2 0.02 220); /* #1f2937 - Dark gray for popover text */
+  --primary: oklch(0.55 0.12 180); /* #0d9488 - Teal primary */
+  --primary-foreground: oklch(1 0 0); /* #ffffff - White text on primary */
+  --secondary: oklch(0.7 0.15 85); /* #f59e0b - Amber secondary */
+  --secondary-foreground: oklch(0.15 0.02 220); /* #111827 - Dark text on secondary */
+  --muted: oklch(0.97 0.005 220); /* #f9fafb - Very light gray */
+  --muted-foreground: oklch(0.45 0.02 220); /* #6b7280 - Medium gray for muted text */
+  --accent: oklch(0.6 0.15 260); /* #6366f1 - Indigo accent */
+  --accent-foreground: oklch(1 0 0); /* #ffffff - White text on accent */
+  --destructive: oklch(0.6 0.2 15); /* #f43f5e - Rose for errors */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff - White text on destructive */
+  --success: oklch(0.65 0.15 150); /* #10b981 - Emerald for success */
+  --success-foreground: oklch(1 0 0); /* #ffffff - White text on success */
+  --border: oklch(0.9 0.005 220); /* #e5e7eb - Light gray borders */
+  --input: oklch(0.98 0.005 220); /* #f9fafb - Very light input background */
+  --ring: oklch(0.55 0.12 180 / 0.5); /* Teal with 50% opacity for focus rings */
+  --chart-1: oklch(0.55 0.12 180); /* Teal for charts */
+  --chart-2: oklch(0.7 0.15 85); /* Amber */
+  --chart-3: oklch(0.65 0.15 150); /* Emerald */
+  --chart-4: oklch(0.6 0.15 260); /* Indigo */
+  --chart-5: oklch(0.6 0.2 15); /* Rose */
+  --radius: 0.75rem; /* 12px rounded corners for friendlier look */
+  --sidebar: oklch(0.99 0.005 220); /* Light sidebar */
+  --sidebar-foreground: oklch(0.2 0.02 220); /* Dark sidebar text */
+  --sidebar-primary: oklch(0.55 0.12 180); /* Teal primary sidebar elements */
+  --sidebar-primary-foreground: oklch(1 0 0); /* White text */
+  --sidebar-accent: oklch(0.7 0.15 85); /* Amber accent */
+  --sidebar-accent-foreground: oklch(0.15 0.02 220); /* Dark text on accent */
+  --sidebar-border: oklch(0.9 0.005 220); /* Light gray borders */
+  --sidebar-ring: oklch(0.55 0.12 180 / 0.5); /* Teal focus ring */
+}
+
+.dark {
+  /* Updated dark theme with BankEase colors and proper contrast (#0d1117 background, #161b22 cards) */
+  --background: oklch(0.08 0.01 220); /* #0d1117 - Deep charcoal black */
+  --foreground: oklch(0.96 0.005 220); /* #f5f5f5 - Light gray text */
+  --card: oklch(0.12 0.01 220); /* #161b22 - Slightly lighter gray for cards */
+  --card-foreground: oklch(0.94 0.005 220); /* #f0f0f0 - Light text on cards */
+  --popover: oklch(0.12 0.01 220); /* #161b22 - Dark popover background */
+  --popover-foreground: oklch(0.96 0.005 220); /* #f5f5f5 - Light popover text */
+  --primary: oklch(0.6 0.12 180); /* #14b8a6 - Brighter teal for dark mode */
+  --primary-foreground: oklch(0.08 0.01 220); /* #0d1117 - Dark text on primary */
+  --secondary: oklch(0.75 0.15 85); /* #fbbf24 - Brighter amber for dark mode */
+  --secondary-foreground: oklch(0.08 0.01 220); /* #0d1117 - Dark text on secondary */
+  --muted: oklch(0.15 0.01 220); /* #1c2128 - Muted dark background */
+  --muted-foreground: oklch(0.7 0.005 220); /* #9ca3af - Muted light text */
+  --accent: oklch(0.65 0.15 260); /* #818cf8 - Brighter indigo for dark mode */
+  --accent-foreground: oklch(0.08 0.01 220); /* #0d1117 - Dark text on accent */
+  --destructive: oklch(0.65 0.2 15); /* #fb7185 - Brighter rose for dark mode */
+  --destructive-foreground: oklch(0.08 0.01 220); /* #0d1117 - Dark text on destructive */
+  --success: oklch(0.7 0.15 150); /* #34d399 - Brighter emerald for dark mode */
+  --success-foreground: oklch(0.08 0.01 220); /* #0d1117 - Dark text on success */
+  --border: oklch(0.2 0.01 220); /* #30363d - Dark borders */
+  --input: oklch(0.15 0.01 220); /* #1c2128 - Dark input background */
+  --ring: oklch(0.6 0.12 180); /* Brighter teal focus ring */
+  --chart-1: oklch(0.6 0.12 180); /* Teal for charts */
+  --chart-2: oklch(0.75 0.15 85); /* Amber */
+  --chart-3: oklch(0.7 0.15 150); /* Emerald */
+  --chart-4: oklch(0.65 0.15 260); /* Indigo */
+  --chart-5: oklch(0.65 0.2 15); /* Rose */
+  --sidebar: oklch(0.1 0.01 220); /* Dark sidebar */
+  --sidebar-foreground: oklch(0.96 0.005 220); /* Light sidebar text */
+  --sidebar-primary: oklch(0.6 0.12 180); /* Teal primary sidebar elements */
+  --sidebar-primary-foreground: oklch(0.08 0.01 220); /* Dark text */
+  --sidebar-accent: oklch(0.75 0.15 85); /* Amber accent */
+  --sidebar-accent-foreground: oklch(0.08 0.01 220); /* Dark text on accent */
+  --sidebar-border: oklch(0.2 0.01 220); /* Dark borders */
+  --sidebar-ring: oklch(0.6 0.12 180); /* Teal focus ring */
+}
+
+@theme inline {
+  /* Added Inter font for BankEase typography */
+  --font-sans: var(--font-inter), var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Updated to use Inter font for better readability */
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+/* Enhanced utility classes for BankEase accessibility and design */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* High contrast focus styles for accessibility */
+  .focus-visible\:ring-4:focus-visible {
+    --tw-ring-offset-width: 2px;
+    --tw-ring-width: 4px;
+  }
+
+  /* Large touch targets for mobile accessibility */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* BankEase specific utilities */
+  .rupee-symbol::before {
+    content: "₹";
+    margin-right: 0.125rem;
+  }
+
+  .gradient-teal-amber {
+    background: linear-gradient(135deg, oklch(0.55 0.12 180), oklch(0.7 0.15 85));
+  }
+
+  .shadow-banking {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  .shadow-banking-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+}
